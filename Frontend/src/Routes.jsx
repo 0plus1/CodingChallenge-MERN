@@ -10,7 +10,7 @@ import Hello from './views/Hello';
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path="/hello/:name/:location" component={Hello} />
+    <Route exact path="/hello/:name/:location" component={Hello} />
   </Switch>
 );
 

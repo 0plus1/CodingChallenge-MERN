@@ -1,21 +1,13 @@
 import React from 'react';
-import ReactRouterPropTypes from 'react-router-prop-types';
+import { useParams } from 'react-router-dom';
 
-function Hello(props) {
-  const { match } = props;
-  const {
-    name,
-    location,
-  } = match.params;
+function Hello() {
+  const { name, location } = useParams();
   return (
     <p>
       {`Hello ${name} from ${location}!`}
     </p>
   );
 }
-
-Hello.propTypes = {
-  match: ReactRouterPropTypes.match.isRequired,
-};
 
 export default Hello;
