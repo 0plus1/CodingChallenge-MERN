@@ -12,17 +12,17 @@ You are given two tables _books_ and _shelves_. A book belongs to a shelf. Shelv
 
 You are asked to:
 
-Create a new route (eg: _/shelf/{id}/read_) which will display all books belonging to that shelf.
-Once a user clicks on a specific book, display the book details (eg: _/book/id/read_)
+1. Create a new route (eg: _/shelf/{id}/read_) which will display all books belonging to that shelf.
+2. Once a user clicks on a specific book, display the book details in a new route (eg: _/book/id/read_).
 
-How you achieve this result is completely up to you. The only requirement is that both frontend and backend are fully complaint with the [AirBnB](https://github.com/airbnb/javascript) style guide (already configured in eslint).
+How you achieve this result is completely up to you. The only requirement is that both frontend and backend are fully complaint with the [AirBnB](https://github.com/airbnb/javascript) style guide (already configured in eslint). Please do not use typescript, this is a es6 javascript challenge.
 
 Bonus points (in order of importance):
 
 * [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
 * Good backend code organisation [example](https://github.com/focusaurus/express_code_structure)
-* Use [redux]()
-* Use prop-types
+* Use [redux](https://github.com/reduxjs/react-redux)
+* Use [prop-types](https://github.com/facebook/prop-types)
 * Basic unit tests using [enzyme](https://airbnb.io/enzyme/)
 * [<💅 />](https://www.styled-components.com/)
 * Add a 404 page
