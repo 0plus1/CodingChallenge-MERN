@@ -2,10 +2,18 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const schema = new Schema({
-  title: 'string',
-  isbn: 'string',
-}, { timestamps: true });
-const Book = mongoose.model('Book', schema);
+const BookSchema = new Schema(
+  {
+    shelfId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Shelf',
+    },
+    title: 'string',
+    isbn: 'string',
+  },
+  { timestamps: true },
+);
+
+const Book = mongoose.model('Book', BookSchema);
 
 module.exports = Book;

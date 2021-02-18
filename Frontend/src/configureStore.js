@@ -1,6 +1,15 @@
-import { applyMiddleware, createStore } from 'redux';
-import promiseMiddleware from 'redux-promise';
-import reducers from './reducers/index';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
+import rootReducer from './reducers';
+
+const initalState = {};
 // eslint-disable-next-line import/prefer-default-export
-export const store = createStore(reducers, applyMiddleware(promiseMiddleware));
+
+const store = createStore(
+  rootReducer,
+  initalState,
+  composeWithDevTools(applyMiddleware()),
+);
+
+export default store;

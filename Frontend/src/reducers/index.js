@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-
+import shelvesReducer from './shelvesReducers';
+import booksReducer from './booksReducer';
 // eslint-disable-next-line no-unused-vars
-const booksReducer = (state = [], action) => (state);
 
 const rootReducer = combineReducers({
+  shelves: shelvesReducer,
   books: booksReducer,
 });
 

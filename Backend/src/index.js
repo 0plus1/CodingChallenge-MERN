@@ -1,24 +1,30 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const connectDB = require('../config/db');
 
-const Book = require('./Models/Book');
-const Shelf = require('./Models/Shelf');
+// const Book = require('./Models/Book');
+// const Shelf = require('./Models/Shelf');
 
 const app = express();
-const port = 3000;
 
 // DB Connection
-mongoose.connect('mongodb://127.0.0.1:27017/challenge', { useNewUrlParser: true, useUnifiedTopology: true });
+connectDB();
+mongoose.connect('mongodb://127.0.0.1:27017/challenge', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
   console.log('Connected to DB');
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(cors());
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
-});
+app.use('/api/shelves', require('./routes/api/shelves'));
+app.use('/api/books', require('./routes/api/books'));
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
