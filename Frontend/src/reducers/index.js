@@ -1,7 +1,26 @@
 import { combineReducers } from 'redux';
+import { GET_BOOK, GET_ALL_BOOKS_FROM_SHELF } from '../actions/types';
 
-// eslint-disable-next-line no-unused-vars
-const booksReducer = (state = [], action) => (state);
+const initialState = {
+  books: [],
+};
+
+const booksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_BOOK:
+      return {
+        ...state,
+        books: [action.payload],
+      };
+    case GET_ALL_BOOKS_FROM_SHELF:
+      return {
+        ...state,
+        books: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
 const rootReducer = combineReducers({
   books: booksReducer,
