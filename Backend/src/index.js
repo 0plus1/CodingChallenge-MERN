@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const startConnection = require("../src/config/connection");
+require("../src/config/connection");
+
 const bookRouter = require("./routes/book");
 
 const app = express();
@@ -21,4 +22,9 @@ app.get("/", (req, res) => {
 });
 app.use("/api", bookRouter);
 
-startConnection(app);
+const port = 5000;
+const server = app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
+
+module.exports = server;
