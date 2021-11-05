@@ -8,7 +8,7 @@ function Home() {
         Hello!
       </p>
       <p>
-        <Link to="/hello/drstrange/newyork">
+        <Link to='/hello/drstrange/newyork'>
           Personalised welcome
         </Link>
       </p>
