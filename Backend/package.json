@@ -8,7 +8,7 @@
     "seed": "seed -u 'mongodb://127.0.0.1:27017/challenge' --drop-database ./data-seeds"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "^5.11.14"
   },
   "devDependencies": {
